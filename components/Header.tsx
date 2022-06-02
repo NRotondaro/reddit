@@ -20,7 +20,7 @@ export const Header = () => {
   const { data: session } = useSession()
 
   return (
-    <div className="sticky top-0 z-50 items-center flex bg-white px-4 py-2 shadow-sm">
+    <div className="sticky top-0 z-50 flex items-center bg-white px-4 py-2 shadow-sm">
       <div className="relative h-10 w-20 flex-shrink-0 cursor-pointer">
         <Image
           layout="fill"
@@ -29,13 +29,13 @@ export const Header = () => {
         />
       </div>
 
-      <div className="flex items-center mx-7 xl:miw-w-[300px]">
+      <div className="xl:miw-w-[300px] mx-7 flex items-center">
         <HomeIcon className="h-5 w-5" />
-        <p className="flex-1 ml-2 hidden lg:inline">Home</p>
+        <p className="ml-2 hidden flex-1 lg:inline">Home</p>
         <ChevronDownIcon className="h-5 w-5" />
       </div>
 
-      <form className="flex flex-1 items-center space-x-2 border border-gray-200 rounded-sm bg-gray-100 px-3 py-1">
+      <form className="flex flex-1 items-center space-x-2 rounded-sm border border-gray-200 bg-gray-100 px-3 py-1">
         <SearchIcon className="h-6 w-6 text-gray-400" />
         <input
           className="flex-1 bg-transparent outline-none"
@@ -45,7 +45,7 @@ export const Header = () => {
         <button type="submit" hidden />
       </form>
 
-      <div className="text-gray-500 space-x-2 mx-5 hidden lg:inline-flex">
+      <div className="mx-5 hidden space-x-2 text-gray-500 lg:inline-flex">
         <SparklesIcon className="icon" />
         <GlobeIcon className="icon" />
         <VideoCameraIcon className="icon" />
@@ -62,7 +62,7 @@ export const Header = () => {
       {session ? (
         <div
           onClick={() => signOut()}
-          className="hidden lg:flex items-center space-x-2 border border-gray-100 p-2 cursor-pointer"
+          className="hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex"
         >
           <div className="relative h-5 w-5 flex-shrink-0">
             <Image
@@ -83,7 +83,7 @@ export const Header = () => {
       ) : (
         <div
           onClick={() => signIn()}
-          className="hidden lg:flex items-center space-x-2 border border-gray-100 p-2 cursor-pointer"
+          className="hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex"
         >
           <div className="relative h-5 w-5 flex-shrink-0">
             <Image

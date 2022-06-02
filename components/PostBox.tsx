@@ -102,7 +102,7 @@ export const PostBox = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="sticky top-16 z-50 bg-white border rounded-md border-gray-300 p-2"
+      className="sticky top-16 z-50 rounded-md border border-gray-300 bg-white p-2"
     >
       <div className="flex items-center space-x-3">
         <Avatar />
@@ -110,7 +110,7 @@ export const PostBox = () => {
         <input
           {...register('postTitle', { required: true })}
           disabled={!session}
-          className="bg-gray-50 rounded-md flex-1 p-2 pl-5 outline-none"
+          className="flex-1 rounded-md bg-gray-50 p-2 pl-5 outline-none"
           type="text"
           placeholder={
             session ? 'Create a post by entering a title!' : 'Sign In to post'
@@ -119,7 +119,7 @@ export const PostBox = () => {
 
         <PhotographIcon
           onClick={() => setImageBoxOpen(!imageBoxOpen)}
-          className={`h-6 text-gray-300 cursor-pointer ${
+          className={`h-6 cursor-pointer text-gray-300 ${
             imageBoxOpen && 'text-blue-300'
           }`}
         />
