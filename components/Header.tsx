@@ -15,6 +15,7 @@ import {
   SearchIcon,
 } from '@heroicons/react/solid'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 export const Header = () => {
   const { data: session } = useSession()
@@ -22,11 +23,13 @@ export const Header = () => {
   return (
     <div className="sticky top-0 z-50 flex items-center bg-white px-4 py-2 shadow-sm">
       <div className="relative h-10 w-20 flex-shrink-0 cursor-pointer">
-        <Image
-          layout="fill"
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/2560px-Reddit_logo_new.svg.png"
-          objectFit="contain"
-        />
+        <Link href="/">
+          <Image
+            layout="fill"
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/2560px-Reddit_logo_new.svg.png"
+            objectFit="contain"
+          />
+        </Link>
       </div>
 
       <div className="xl:miw-w-[300px] mx-7 flex items-center">
