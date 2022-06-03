@@ -8,6 +8,7 @@ import { ADD_COMMENT } from '../../graphql/mutation'
 import toast from 'react-hot-toast'
 import { Avatar } from '../../components/Avatar'
 import ReactTimeago from 'react-timeago'
+import { Jelly } from '@uiball/loaders'
 
 interface FormData {
   comment: string
@@ -34,7 +35,9 @@ const PostPage = () => {
     watch,
     setValue,
     formState: { errors },
-  } = useForm<FormData>()
+  } = useForm<FormData>({
+    shouldUseNativeValidation: true,
+  })
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     const notification = toast.loading('Posting your comment...')
@@ -54,6 +57,13 @@ const PostPage = () => {
     })
   }
 
+  if (!post)
+    return (
+      <div className="flex w-full items-center justify-center p-10 text-xl">
+        <Jelly size={50} color="#FF4501" />
+      </div>
+    )
+
   return (
     <div className="mx-auto my-7 max-w-5xl">
       <Post post={post} />
@@ -68,7 +78,7 @@ const PostPage = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <textarea
-            {...register('comment')}
+            {...register('comment', { required: 'Please enter your comment.' })}
             disabled={!session}
             className="h-24 rounded-md border border-gray-200 p-2 pl-4 outline-none disabled:bg-gray-50"
             placeholder={
@@ -77,6 +87,7 @@ const PostPage = () => {
           />
 
           <button
+            disabled={!session}
             type="submit"
             className="rounded-full bg-red-500 p-3 font-semibold text-white disabled:bg-gray-200"
           >
