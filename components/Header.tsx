@@ -26,7 +26,7 @@ export const Header = () => {
         <Link href="/">
           <Image
             layout="fill"
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Reddit_logo_new.svg/2560px-Reddit_logo_new.svg.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Reddit_logo_new.svg/2560px-Reddit_logo_new.svg.png"
             objectFit="contain"
           />
         </Link>

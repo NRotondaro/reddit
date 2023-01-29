@@ -17,7 +17,7 @@ export const Feed = ({ topic }: Props) => {
       })
 
   const posts: Post[] = !topic ? data?.getPostList : data?.getPostListByTopic
-  
+
   if (!posts)
     return (
       <div className="flex w-full items-center justify-center p-10 text-xl">
