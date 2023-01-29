@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
 
 export const ADD_POST = gql`
   mutation MyMutation(
@@ -24,7 +24,7 @@ export const ADD_POST = gql`
       username
     }
   }
-`
+`;
 
 export const ADD_SUBREDDIT = gql`
   mutation MyMutation($topic: String!) {
@@ -34,7 +34,7 @@ export const ADD_SUBREDDIT = gql`
       created_at
     }
   }
-`
+`;
 
 export const ADD_COMMENT = gql`
   mutation MyMutation($post_id: ID!, $username: String!, $text: String!) {
@@ -46,7 +46,7 @@ export const ADD_COMMENT = gql`
       username
     }
   }
-`
+`;
 
 export const ADD_VOTE = gql`
   mutation MyMutation($post_id: ID!, $username: String!, $upvote: Boolean!) {
@@ -57,4 +57,4 @@ export const ADD_VOTE = gql`
       username
     }
   }
-`
+`;

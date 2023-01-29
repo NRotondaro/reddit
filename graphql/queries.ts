@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
 
 export const GET_ALL_VOTES_BY_POST_ID = gql`
   query MyQuery($post_id: ID!) {
@@ -10,7 +10,7 @@ export const GET_ALL_VOTES_BY_POST_ID = gql`
       username
     }
   }
-`
+`;
 
 export const GET_SUBREDDIT_BY_TOPIC = gql`
   query MyQuery($topic: String!) {
@@ -20,7 +20,7 @@ export const GET_SUBREDDIT_BY_TOPIC = gql`
       created_at
     }
   }
-`
+`;
 export const GET_ALL_POSTS = gql`
   query MyQuery {
     getPostList {
@@ -52,7 +52,7 @@ export const GET_ALL_POSTS = gql`
       }
     }
   }
-`
+`;
 
 export const GET_ALL_POSTS_BY_TOPIC = gql`
   query MyQuery($topic: String!) {
@@ -85,7 +85,7 @@ export const GET_ALL_POSTS_BY_TOPIC = gql`
       }
     }
   }
-`
+`;
 
 export const GET_POST_BY_POST_ID = gql`
   query MyQuery($post_id: ID!) {
@@ -118,7 +118,7 @@ export const GET_POST_BY_POST_ID = gql`
       }
     }
   }
-`
+`;
 
 export const GET_SUBREDDITS_WITH_LIMIT = gql`
   query MyQuery($limit: Int!) {
@@ -128,4 +128,4 @@ export const GET_SUBREDDITS_WITH_LIMIT = gql`
       topic
     }
   }
-`
+`;
